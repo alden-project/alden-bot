@@ -1,0 +1,62 @@
+{
+	"name": "alden-bot",
+	"version": "1.1.0",
+	"description": "Zalo Bot using zca-js",
+	"main": "src/index.ts",
+	"type": "module",
+	"packageManager": "pnpm@10.14.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/finntrannn/alden-bot.git"
+	},
+	"bugs": {
+		"url": "https://github.com/finntrannn/alden-bot/issues"
+	},
+	"homepage": "https://finn.id.vn",
+	"scripts": {
+		"dev": "tsx watch src/index.ts",
+		"start": "node launcher.mjs",
+		"start:bot": "tsx src/index.ts",
+		"create-plugin": "tsx scripts/create-plugin.ts",
+		"lint": "eslint . && prettier --check . --ignore-unknown",
+		"check:locales": "tsx scripts/check-locales.ts",
+		"smoke": "tsx scripts/smoke.ts",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit",
+		"verify": "eslint . && prettier --check . --ignore-unknown && tsx scripts/check-locales.ts && vitest run && tsc --noEmit && tsx scripts/smoke.ts",
+		"format": "prettier --write . --ignore-unknown",
+		"format:check": "prettier --check . --ignore-unknown"
+	},
+	"keywords": [],
+	"author": {
+		"name": "finntrannn",
+		"url": "https://finn.id.vn"
+	},
+	"license": "MIT",
+	"pnpm": {
+		"overrides": {
+			"minimatch": "3.1.2"
+		}
+	},
+	"dependencies": {
+		"cron-parser": "^5.5.0",
+		"dotenv": "^17.4.2",
+		"qrcode-terminal": "^0.12.0",
+		"semver": "^7.7.4",
+		"tsx": "^4.21.0",
+		"zca-js": "^2.1.2"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.1",
+		"@types/node": "^25.6.0",
+		"@types/qrcode-terminal": "^0.12.2",
+		"@types/semver": "^7.7.1",
+		"eslint": "^9.39.1",
+		"eslint-config-prettier": "^10.1.8",
+		"prettier": "^3.8.3",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.59.0",
+		"vitest": "^4.1.6"
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"core": {
+		"cooldown": {
+			"wait": "⏳ Please wait {time}s before using this command again."
+		},
+		"permission": {
+			"denied": "❌ You don't have permission to use this command (Required: {permission})."
+		},
+		"command": {
+			"error": "❌ Error executing command /{command}.",
+			"unknown": "Command not found! Send \"{prefix}help\" to see available commands.",
+			"no_permission": "❌ You don't have permission to use this command."
+		}
+	},
+	"command": {
+		"cancel": {
+			"description": "Cancel a pending command or session",
+			"success": "✅ Current operation has been cancelled.",
+			"empty": "⚠️ You have no pending operations to cancel."
+		},
+		"eval": {
+			"description": "Execute JavaScript code (Bot Admin only)",
+			"usage": "<code>",
+			"no_code": "⚠️ Please enter JS code to execute.",
+			"success": "✅ Result:\n{output}",
+			"error": "❌ Execution error:\n{error}"
+		},
+		"help": {
+			"description": "Show list of available commands",
+			"not_found": "❌ Command **/{command}** not found!",
+			"detail": "**Command details: /{command}**\n**Description:** {desc}\n**Aliases:** {aliases}\n**Cooldown:** {cooldown} seconds\n**Usage:** {usage}",
+			"list_title": "***📚 Command List:***\n\n",
+			"list_item": "**{prefix}{name}** - {desc}\n",
+			"page_info": "Page {current}/{total}",
+			"page_prev": "`/help {page}` ← prev",
+			"page_next": "next → `/help {page}`",
+			"usage": "\nUsage: `/help [command]` for more details."
+		},
+		"permission": {
+			"description": "Manage group permissions",
+			"usage": "<deputy|list|view> [args...]",
+			"not_group": "❌ This command can only be used in groups.",
+			"invalid_usage": "❌ Usage: /permission deputy <add/remove> <@tag/uid>",
+			"user_not_found": "❌ User not found. Please @tag or enter a UID.",
+			"need_leader": "❌ You must be a Group Leader or Bot Admin to assign Virtual Deputy roles.",
+			"deputy_added": "✅ Virtual Deputy role granted to UID: {uid}",
+			"deputy_already": "⚠️ UID {uid} is already a Virtual Deputy.",
+			"deputy_removed": "✅ Virtual Deputy role revoked from UID: {uid}",
+			"deputy_not_found": "⚠️ UID {uid} is not a Virtual Deputy.",
+			"list_title": "📜 Permission Nodes:\n",
+			"view_info": "👤 Permission info for {uid}:\n- Role: {role}\n- Explicit Nodes: {permissions}",
+			"help_guide": "🛠 Usage guide for /permission:\n- /permission deputy add <@tag/uid>\n- /permission deputy remove <@tag/uid>\n- /permission list\n- /permission view <@tag/uid>"
+		},
+		"ping": {
+			"description": "Check if the bot is alive",
+			"pinging": "🏓 Pinging...",
+			"result": "🏓 Pong! Latency: {latency}ms"
+		},
+		"plugins": {
+			"description": "Manage plugins (Admin only)",
+			"empty": "🧩 No plugins are currently active.",
+			"list_title": "🧩 **Plugins ({count}):**\n\n",
+			"plugin_item": "· ***{name}*** — v{version} (*by {author}*)\n"
+		},
+		"reload": {
+			"description": "Reload all plugins (Admin only)",
+			"usage": "",
+			"reloading_all": "🔄 Reloading all plugins...",
+			"success_all": "✅ Successfully reloaded {count} plugins.\n⚠️ **WARNING**: Excessive reloading may cause memory leaks (consider using /restart instead).",
+			"failed": "❌ Failed to reload plugins. Check logs for details."
+		},
+		"restart": {
+			"description": "Restart the bot (requires PM2/Docker)",
+			"restarting": "🔄 Bot is restarting..."
+		},
+		"update": {
+			"description": "Check or apply alden-bot runtime updates",
+			"usage": "[check|apply]",
+			"invalid_usage": "Usage: /update [check|apply]",
+			"available": "🔔 alden-bot update available!\n- Current: v{current}\n- Latest: v{latest}\n- Published: {date}\n- Release: {url}\n\nUse /update apply to install it automatically when running through the launcher.",
+			"up_to_date": "✅ alden-bot is up to date (v{current}).",
+			"ahead": "ℹ️ This bot is ahead of the latest release.\n- Current: v{current}\n- Latest release: v{latest}",
+			"unavailable": "⚠️ Could not check for updates: {reason}",
+			"apply_requires_launcher": "⚠️ Automatic update requires the launcher. Start the bot with pnpm start or an equivalent package manager command, then run /update apply again.",
+			"apply_unsupported_docker": "⚠️ Automatic in-container update is not supported. Update Docker by rebuilding or pulling the image, then run docker compose up -d.",
+			"apply_missing_assets": "⚠️ Release v{version} cannot be applied automatically because it is missing the ZIP asset or SHA256 checksum.",
+			"apply_started": "🔄 Update to v{version} is starting. The bot will stop, update through the launcher, then start again."
+		},
+		"status": {
+			"description": "Show bot system status",
+			"info": "📊 **alden-bot status**\n- Version: v{version}\n- Bot Uptime: {uptime}\n- OS Uptime: {osUptime}\n\n💻 **Memory (RAM)**\n- RSS: {rss} MB\n- Heap Total: {heapTotal} MB\n- Heap Used: {heapUsed} MB\n- OS Free: {freeMem} MB / {totalMem} MB\n\n⚙️ **System**\n- OS: {osType} {osRelease} ({osArch})\n- Node.js: {nodeVersion}\n- CPU: {cpu}"
+		},
+		"language": {
+			"description": "Change display language",
+			"usage": "[language code]",
+			"current": "🌐 Current language: {lang}\n📋 Available: {available}\n\nUsage: /language <code> to change language.",
+			"changed": "✅ Language changed to: {lang}",
+			"not_found": "❌ Language \"{lang}\" not found.\n📋 Available: {available}"
+		}
+	}
+}

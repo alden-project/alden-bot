@@ -1,0 +1,101 @@
+{
+	"core": {
+		"cooldown": {
+			"wait": "⏳ Vui lòng đợi {time}s trước khi dùng lại lệnh này."
+		},
+		"permission": {
+			"denied": "❌ Bạn không có quyền dùng lệnh này (Cần quyền: {permission})."
+		},
+		"command": {
+			"error": "❌ Lỗi khi thực thi lệnh /{command}.",
+			"unknown": "Không tìm thấy lệnh này! Vui lòng gửi \"{prefix}help\" để xem những lệnh có sẵn.",
+			"no_permission": "❌ Bạn không có quyền sử dụng lệnh này."
+		}
+	},
+	"command": {
+		"cancel": {
+			"description": "Hủy bỏ lệnh hoặc phiên đang chờ",
+			"success": "✅ Đã hủy thao tác hiện tại.",
+			"empty": "⚠️ Bạn không có thao tác nào đang chờ được hủy."
+		},
+		"eval": {
+			"description": "Thực thi mã JavaScript (Chỉ Bot Admin)",
+			"usage": "<code>",
+			"no_code": "⚠️ Vui lòng nhập mã JS cần thực thi.",
+			"success": "✅ Kết quả:\n{output}",
+			"error": "❌ Lỗi thực thi:\n{error}"
+		},
+		"help": {
+			"description": "Hiển thị danh sách các lệnh có sẵn",
+			"not_found": "❌ Không tìm thấy lệnh **/{command}**!",
+			"detail": "**Thông tin chi tiết về lệnh: /{command}**\n**Mô tả:** {desc}\n**Lệnh tắt:** {aliases}\n**Thời gian hồi:** {cooldown} giây\n**Cách dùng:** {usage}",
+			"list_title": "***📚 Danh sách lệnh:***\n\n",
+			"list_item": "**{prefix}{name}** - {desc}\n",
+			"page_info": "Trang {current}/{total}",
+			"page_prev": "`/help {page}` ← trước",
+			"page_next": "sau → `/help {page}`",
+			"usage": "\nSử dụng: /help [lệnh] để xem chi tiết."
+		},
+		"permission": {
+			"description": "Quản lý quyền hạn trong nhóm",
+			"usage": "<deputy|list|view> [args...]",
+			"not_group": "❌ Lệnh này chỉ dùng trong nhóm.",
+			"invalid_usage": "❌ Dùng: /permission deputy <add/remove> <@tag/uid>",
+			"user_not_found": "❌ Không tìm thấy người dùng. Vui lòng @tag hoặc nhập UID.",
+			"need_leader": "❌ Bạn phải là Trưởng Nhóm hoặc Bot Admin mới được phân quyền Phó Nhóm Ảo.",
+			"deputy_added": "✅ Đã cấp quyền Phó Nhóm Ảo cho UID: {uid}",
+			"deputy_already": "⚠️ UID {uid} đã là Phó Nhóm Ảo.",
+			"deputy_removed": "✅ Đã thu hồi quyền Phó Nhóm Ảo của UID: {uid}",
+			"deputy_not_found": "⚠️ UID {uid} không phải là Phó Nhóm Ảo.",
+			"list_title": "📜 Danh sách Permission Nodes:\n",
+			"view_info": "👤 Thông tin quyền của {uid}:\n- Role: {role}\n- Explicit Permissions: {permissions}",
+			"help_guide": "🛠 Hướng dẫn dùng /permission:\n- /permission deputy add <@tag/uid>\n- /permission deputy remove <@tag/uid>\n- /permission list\n- /permission view <@tag/uid>"
+		},
+		"ping": {
+			"description": "Kiểm tra bot có hoạt động không",
+			"pinging": "🏓 Pinging...",
+			"result": "🏓 Pong! Độ trễ: {latency}ms"
+		},
+		"plugins": {
+			"description": "Quản lý các plugin (Admin only)",
+			"empty": "🧩 Không có plugin nào đang hoạt động.",
+			"list_title": "🧩 **Plugins ({count}):**\n\n",
+			"plugin_item": "· ***{name}*** — v{version} (*bởi {author}*)\n"
+		},
+		"reload": {
+			"description": "Tải lại tất cả plugin (Admin only)",
+			"usage": "",
+			"reloading_all": "🔄 Đang tải lại tất cả plugins...",
+			"success_all": "✅ Đã tải lại thành công {count} plugins.\n⚠️ **CẢNH BÁO**: Lạm dụng reload có thể gây rò rỉ RAM (khuyến nghị dùng /restart nếu reload nhiều lần).",
+			"failed": "❌ Tải lại plugins thất bại. Kiểm tra logs để biết chi tiết."
+		},
+		"restart": {
+			"description": "Khởi động lại Bot (Cần PM2/Docker)",
+			"restarting": "🔄 Bot đang khởi động lại..."
+		},
+		"update": {
+			"description": "Kiểm tra hoặc cài bản cập nhật alden-bot",
+			"usage": "[check|apply]",
+			"invalid_usage": "Cách dùng: /update [check|apply]",
+			"available": "🔔 Có bản cập nhật alden-bot!\n- Hiện tại: v{current}\n- Mới nhất: v{latest}\n- Ngày phát hành: {date}\n- Release: {url}\n\nDùng /update apply để tự động cài khi bot đang chạy qua launcher.",
+			"up_to_date": "✅ alden-bot đang ở bản mới nhất (v{current}).",
+			"ahead": "ℹ️ Bot này đang mới hơn release mới nhất.\n- Hiện tại: v{current}\n- Release mới nhất: v{latest}",
+			"unavailable": "⚠️ Không thể kiểm tra cập nhật: {reason}",
+			"apply_requires_launcher": "⚠️ Tự động cập nhật cần launcher. Hãy chạy bot bằng pnpm start hoặc command tương đương của package manager khác, rồi dùng lại /update apply.",
+			"apply_unsupported_docker": "⚠️ Không hỗ trợ tự cập nhật code bên trong container. Hãy cập nhật Docker bằng cách rebuild hoặc pull image, rồi chạy docker compose up -d.",
+			"apply_missing_assets": "⚠️ Release v{version} không thể tự cài vì thiếu file ZIP hoặc checksum SHA256.",
+			"apply_started": "🔄 Bắt đầu cập nhật lên v{version}. Bot sẽ dừng, launcher cập nhật, rồi tự chạy lại."
+		},
+		"status": {
+			"description": "Hiển thị trạng thái hệ thống Bot",
+			"info": "📊 **alden-bot status**\n- Phiên bản: v{version}\n- Uptime Bot: {uptime}\n- Uptime OS: {osUptime}\n\n💻 **Bộ nhớ (RAM)**\n- RSS: {rss} MB\n- Heap Total: {heapTotal} MB\n- Heap Used: {heapUsed} MB\n- OS Free: {freeMem} MB / {totalMem} MB\n\n⚙️ **Hệ thống**\n- OS: {osType} {osRelease} ({osArch})\n- Node.js: {nodeVersion}\n- CPU: {cpu}"
+		},
+		"language": {
+			"description": "Đổi ngôn ngữ hiển thị",
+			"usage": "[mã ngôn ngữ]",
+			"current": "🌐 Ngôn ngữ hiện tại: {lang}\n📋 Có sẵn: {available}\n\nDùng: /language <mã> để đổi ngôn ngữ.",
+			"changed": "✅ Đã đổi ngôn ngữ sang: {lang}",
+			"not_found": "❌ Không tìm thấy ngôn ngữ \"{lang}\".\n📋 Có sẵn: {available}"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+services:
+    alden-bot:
+        build: .
+        container_name: alden-bot
+        restart: unless-stopped
+        env_file:
+            - .env
+        volumes:
+            - ./data:/app/data
+            - ./plugins:/app/plugins

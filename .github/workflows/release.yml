@@ -1,0 +1,35 @@
+name: Release assets
+
+on:
+    release:
+        types: [published]
+
+permissions:
+    contents: write
+
+jobs:
+    package:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Package release ZIP
+              run: |
+                  set -euo pipefail
+                  TAG="${GITHUB_REF_NAME}"
+                  ZIP="alden-bot-${TAG}.zip"
+                  zip -r "$ZIP" . \
+                    -x ".git/*" \
+                    -x ".env" \
+                    -x "data/*" \
+                    -x "plugins/*" \
+                    -x "node_modules/*"
+                  sha256sum "$ZIP" > "$ZIP.sha256"
+                  echo "ZIP=$ZIP" >> "$GITHUB_ENV"
+
+            - name: Upload release assets
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: gh release upload "$GITHUB_REF_NAME" "$ZIP" "$ZIP.sha256" --clobber

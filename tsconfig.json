@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"target": "ES2022",
+		"allowJs": true,
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
+		"isolatedModules": true,
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "Bundler",
+		"module": "ESNext",
+		"rootDir": ".",
+		"types": ["node"],
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"lib": ["ES2022", "DOM"]
+	},
+	"include": ["src/**/*", "scripts/**/*", "tests/**/*", "vitest.config.ts", "launcher.mjs"],
+	"exclude": ["node_modules", "dist", "data", "plugins"]
+}
